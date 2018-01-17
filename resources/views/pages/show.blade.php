@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <h2>{{ $page['title'] }}</h2>
             <p> {{ $page['alias'] }} </p>
-            <p> {{ $page['intro'] }} </p>
-            <p> {{ $page['content'] }} </p>
+            <p><a href="show/{{$page['id']}}"> View full info</a></p>
         </div>
 
     @endforeach

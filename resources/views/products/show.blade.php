@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <h2>{{ $product['title'] }}</h2>
             <p> {{ $product['alias'] }} </p>
-            <p> {{ $product['intro'] }} </p>
-            <p> {{ $product['content'] }} </p>
+            <p><a href="show/{{$product['id']}}"> View full info</a></p>
         </div>
 
     @endforeach

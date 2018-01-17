@@ -6,8 +6,7 @@
     <div class="col-md-12">
         <h2>{{ $order['customer_name'] }}</h2>
         <p> {{ $order['email'] }} </p>
-        <p> {{ $order['phone'] }} </p>
-        <p> {{ $order['feedback'] }} </p>
+        <p><a href="show/{{$order['id']}}"> View full info</a></p>
     </div>
 
     @endforeach
