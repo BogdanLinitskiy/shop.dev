@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form action="/pages" method="post" class="form-horizontal">
+        <form action="/products" method="post" class="form-horizontal">
             @include('embed.errors')
 
             {{csrf_field()}}
@@ -18,13 +18,13 @@
             </div>
 
             <div class="form-group">
-                <label for="intro" >Intro: </label>
-                <textarea  name="intro" id="intro" class="form-control"></textarea>
+                <label for="price" >Price: </label>
+                <input type ="text" class="form-control" id="price" name="price">
             </div>
 
             <div class="form-group">
-                <label for="content" >Content: </label>
-                <textarea  name="content" id="content" class="form-control"></textarea>
+                <label for="description" >Description: </label>
+                <textarea  name="description" id="description" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
@@ -38,7 +38,7 @@
 @section('jumbotron')
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Create new page</h1>
+            <h1 class="display-4">Create new product</h1>
         </div>
     </div>
 

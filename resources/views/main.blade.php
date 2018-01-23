@@ -1,7 +1,9 @@
 @extends('template')
 
 @section('content')
-
+    <div class="col-md-12">
+        <h1 align="center">Products</h1>
+    </div>
     @foreach($products as $product)
 
         <div class="col-md-4">
@@ -13,6 +15,10 @@
         </div>
 
     @endforeach
+    <div class="col-md-12">
+        <hr>
+        <h1 align="center">Orders</h1>
+    </div>
     @foreach($orders as $order)
 
         <div class="col-md-4">
@@ -24,6 +30,10 @@
         </div>
 
     @endforeach
+    <div class="col-md-12">
+        <hr>
+        <h1 align="center">Pages</h1>
+    </div>
     @foreach($pages as $page)
 
         <div class="col-md-4">
