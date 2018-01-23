@@ -15,17 +15,17 @@
             </div>
 
             <div class="form-group">
-                <label for="phone" >Title: </label>
+                <label for="phone" >Phone: </label>
                 <input  type ="text" class="form-control" id="phone" name="phone" value="{{$order['phone']}}">
             </div>
 
             <div class="form-group">
-                <label for="email" >Intro: </label>
+                <label for="email" >Email: </label>
                 <textarea  name="email" id="email" class="form-control">{{$order['email']}}</textarea>
             </div>
 
             <div class="form-group">
-                <label for="feedback" >Body: </label>
+                <label for="feedback" >Feedback: </label>
                 <textarea name="feedback" id="feedback" class="form-control">{{$order['feedback']}}</textarea>
             </div>
 
@@ -39,7 +39,7 @@
 @section('jumbotron')
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Create new blog post</h1>
+            <h1 class="display-4">Editing {{$order->customer_name}}({{$order->email}}) order</h1>
         </div>
     </div>
 

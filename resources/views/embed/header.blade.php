@@ -10,13 +10,13 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/products/show">Show products</a>
+                <a class="nav-link" href="/products/create">Create product</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/orders/show">Show orders</a>
+                <a class="nav-link" href="/orders/create">Create order</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/pages/show">Show pages</a>
+                <a class="nav-link" href="/pages/create">Create page</a>
             </li>
 
         </ul>

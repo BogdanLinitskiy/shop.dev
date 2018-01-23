@@ -15,7 +15,7 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4"> {{ $order['customer_name'] }} </h1>
+            <h1 class="display-4"> Customer {{ $order['customer_name'] }} info</h1>
         </div>
     </div>
 

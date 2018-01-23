@@ -26,7 +26,7 @@
 @section('jumbotron')
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Create new blog post</h1>
+            <h1 class="display-4">Deleting {{$order->customer_name}} ({{$order->email}}) user </h1>
         </div>
     </div>
 

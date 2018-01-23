@@ -18,12 +18,12 @@
             </div>
 
             <div class="form-group">
-                <label for="email" >Intro: </label>
+                <label for="email" >Email: </label>
                 <textarea  name="email" id="email" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="feedback" >Body: </label>
+                <label for="feedback" >Feedback: </label>
                 <textarea  name="feedback" id="feedback" class="form-control"></textarea>
             </div>
 
