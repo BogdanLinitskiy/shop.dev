@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function show_single($id){
-        $data['pages'] = Page::find($id);
-        return view('pages.show_single',$data);
+    public function index(Page $pages){
+        return view('main',compact('pages'));
     }
     public function show(){
         $data['pages'] = Page::all();

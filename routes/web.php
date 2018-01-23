@@ -13,11 +13,19 @@
 
 Route::get('/', 'HomeController@home');
 
-Route::get('/products/show/{id}','ProductsController@show_single');
-Route::get('/orders/show/{id}','OrdersController@show_single');
-Route::get('/pages/show/{id}','PagesController@show_single');
+//Route::get('/products/show/{id}','ProductsController@show_single');
+//Route::get('/orders/show/{id}','OrdersController@show_single');
+//Route::get('/pages/show/{id}','PagesController@show_single');
+//
+//Route::get('/products/show','ProductsController@show');
+//Route::get('/orders/show','OrdersController@show');
+//Route::get('/pages/show','PagesController@show');
 
-Route::get('/products/show','ProductsController@show');
-Route::get('/orders/show','OrdersController@show');
-Route::get('/pages/show','PagesController@show');
+Route::get('/orders/{order}/delete','OrdersController@delete');
+
+Route::resources([
+    'orders' => 'OrdersController',
+    'pages' => 'PagesController',
+    'products' => 'ProductsController'
+]);
 

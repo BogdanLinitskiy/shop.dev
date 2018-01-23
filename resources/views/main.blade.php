@@ -2,15 +2,37 @@
 
 @section('content')
 
-    {{--@foreach($products as $post)--}}
+    @foreach($products as $product)
 
-        {{--<div class="col-md-4">--}}
-            {{--<h2>{{ $post['title'] }}</h2>--}}
-            {{--<p> {{ $post['alias'] }} </p>--}}
-            {{--<p><a class="btn btn-secondary" href="/products/{{ $post['id'] }}" role="button">View details »</a></p>--}}
-        {{--</div>--}}
+        <div class="col-md-4">
+            <h2>{{ $product['title'] }}</h2>
+            <p> {{ $product['alias'] }} </p>
+            <p><a class="btn btn-primary" href="/products/{{ $product['alias'] }}" role="button">View details »</a></p>
+            <p><a class="btn btn-success" href="/products/{{ $product['alias'] }}/edit" role="button">Edit »</a></p>
+            <p><a class="btn btn-danger" href="/products/{{ $product['alias'] }}/delete" role="button">Delete »</a></p>
+        </div>
 
-    {{--@endforeach--}}
+    @endforeach
+    @foreach($orders as $order)
+
+        <div class="col-md-4">
+            <h2>{{ $order['customer_name'] }}</h2>
+            <p> {{ $order['email'] }} </p>
+            <p><a class="btn btn-primary" href="/orders/{{ $order['id'] }}" role="button">View details »</a></p>
+            <p><a class="btn btn-success" href="/orders/{{ $order['id'] }}/edit" role="button">Edit »</a></p>
+            <p><a class="btn btn-danger" href="/orders/{{ $order['id'] }}/delete" role="button">Delete »</a></p>
+        </div>
+
+    @endforeach
+    @foreach($pages as $page)
+
+        <div class="col-md-4">
+            <h2>{{ $page['title'] }}</h2>
+            <p> {{ $page['alias'] }} </p>
+            <p><a class="btn btn-secondary" href="/pages/{{ $page['id'] }}" role="button">View details »</a></p>
+        </div>
+
+    @endforeach
 
 @endsection
 
