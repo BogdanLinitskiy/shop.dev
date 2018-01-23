@@ -22,6 +22,8 @@ Route::get('/', 'HomeController@home');
 //Route::get('/pages/show','PagesController@show');
 
 Route::get('/orders/{order}/delete','OrdersController@delete');
+Route::get('/pages/{page}/delete','PagesController@delete');
+Route::get('/products/{product}/delete','ProductsController@delete');
 
 Route::resources([
     'orders' => 'OrdersController',

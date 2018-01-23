@@ -29,7 +29,9 @@
         <div class="col-md-4">
             <h2>{{ $page['title'] }}</h2>
             <p> {{ $page['alias'] }} </p>
-            <p><a class="btn btn-secondary" href="/pages/{{ $page['id'] }}" role="button">View details »</a></p>
+            <p><a class="btn btn-primary" href="/pages/{{ $page['alias'] }}" role="button">View details »</a></p>
+            <p><a class="btn btn-success" href="/pages/{{ $page['alias'] }}/edit" role="button">Edit »</a></p>
+            <p><a class="btn btn-danger" href="/pages/{{ $page['alias'] }}/delete" role="button">Delete »</a></p>
         </div>
 
     @endforeach
