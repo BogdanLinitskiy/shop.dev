@@ -7,6 +7,7 @@
         <p> {{ $order['email'] }} </p>
         <p> {{ $order['phone'] }} </p>
         <p> {{ $order['feedback'] }} </p>
+        <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
     </div>
 
 @endsection

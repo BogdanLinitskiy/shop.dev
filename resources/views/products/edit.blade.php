@@ -20,17 +20,18 @@
             </div>
 
             <div class="form-group">
-                <label for="price" >Intro: </label>
+                <label for="price" >Price: </label>
                 <input type ="text" class="form-control" id="price" name="price" value="{{$product['price']}}">
             </div>
 
             <div class="form-group">
-                <label for="description" >Price: </label>
+                <label for="description" >Description: </label>
                 <textarea  name="description" id="description" class="form-control">{{$product['description']}}</textarea>
             </div>
 
             <div class="form-group">
                 <button class="btn btn-default">Update</button>
+                <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
             </div>
         </form>
     </div>

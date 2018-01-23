@@ -31,6 +31,7 @@
 
             <div class="form-group">
                 <button class="btn btn-default">Update</button>
+                <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
             </div>
         </form>
     </div>

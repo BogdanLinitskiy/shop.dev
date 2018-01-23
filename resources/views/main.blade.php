@@ -52,8 +52,7 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Welcome to Shop</h1>
-            <p> THis is my test shop </p>
+            <h1 class="display-4" align="center">Welcome to the Shop</h1>
         </div>
     </div>
 
