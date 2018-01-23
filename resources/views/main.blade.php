@@ -7,11 +7,19 @@
     @foreach($products as $product)
 
         <div class="col-md-4">
-            <h2>{{ $product['title'] }}</h2>
-            <p> {{ $product['alias'] }} </p>
-            <p><a class="btn btn-primary" href="/products/{{ $product['alias'] }}" role="button">View details »</a></p>
-            <p><a class="btn btn-success" href="/products/{{ $product['alias'] }}/edit" role="button">Edit »</a></p>
-            <p><a class="btn btn-danger" href="/products/{{ $product['alias'] }}/delete" role="button">Delete »</a></p>
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h2 class="card-text">{{ $product['title'] }}</h2>
+                    <p class="card-text">{{ $product['price'] }}$</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/products/{{ $product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/products/{{ $product['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/products/{{ $product['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     @endforeach
@@ -22,11 +30,19 @@
     @foreach($orders as $order)
 
         <div class="col-md-4">
-            <h2>{{ $order['customer_name'] }}</h2>
-            <p> {{ $order['email'] }} </p>
-            <p><a class="btn btn-primary" href="/orders/{{ $order['id'] }}" role="button">View details »</a></p>
-            <p><a class="btn btn-success" href="/orders/{{ $order['id'] }}/edit" role="button">Edit »</a></p>
-            <p><a class="btn btn-danger" href="/orders/{{ $order['id'] }}/delete" role="button">Delete »</a></p>
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h2 class="card-text">{{ $order['customer_name'] }}</h2>
+                    <p class="card-text">{{ $order['email'] }}$</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/orders/{{ $order['id'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/orders/{{ $order['id'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     @endforeach
@@ -37,11 +53,19 @@
     @foreach($pages as $page)
 
         <div class="col-md-4">
-            <h2>{{ $page['title'] }}</h2>
-            <p> {{ $page['alias'] }} </p>
-            <p><a class="btn btn-primary" href="/pages/{{ $page['alias'] }}" role="button">View details »</a></p>
-            <p><a class="btn btn-success" href="/pages/{{ $page['alias'] }}/edit" role="button">Edit »</a></p>
-            <p><a class="btn btn-danger" href="/pages/{{ $page['alias'] }}/delete" role="button">Delete »</a></p>
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h2 class="card-text">{{ $page['title'] }}</h2>
+                    <p class="card-text">{{ $page['intro'] }}$</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/pages/{{ $page['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/pages/{{ $page['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     @endforeach
