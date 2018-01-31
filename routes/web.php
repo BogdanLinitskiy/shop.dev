@@ -13,13 +13,6 @@
 
 Route::get('/', 'HomeController@home');
 
-//Route::get('/products/show/{id}','ProductsController@show_single');
-//Route::get('/orders/show/{id}','OrdersController@show_single');
-//Route::get('/pages/show/{id}','PagesController@show_single');
-//
-//Route::get('/products/show','ProductsController@show');
-//Route::get('/orders/show','OrdersController@show');
-//Route::get('/pages/show','PagesController@show');
 
 Route::get('/orders/{order}/delete','OrdersController@delete');
 Route::get('/pages/{page}/delete','PagesController@delete');
@@ -28,6 +21,22 @@ Route::get('/products/{product}/delete','ProductsController@delete');
 Route::resources([
     'orders' => 'OrdersController',
     'pages' => 'PagesController',
-    'products' => 'ProductsController'
+    'products' => 'ProductsController',
+    'admin/products' => 'Admin\ProductsController',
 ]);
+
+Route::get('/categories/{category}','CategoriesController@show');
+
+Route::get('/admin_panel','Admin\MainController@index');
+Route::get('/admin_panel/main','Admin\MainController@main');
+Route::post('/auth_check','Admin\SessionsController@store');
+
+
+Route::get('/login','SessionsController@create')->name('login');
+Route::post('/sessions','SessionsController@store');
+
+Route::get('/logout','SessionsController@destroy');
+
+Route::get('/register','RegistrationController@create');
+Route::post('/register','RegistrationController@store');
 

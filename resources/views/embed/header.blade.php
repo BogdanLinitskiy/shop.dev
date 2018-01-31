@@ -19,6 +19,23 @@
                 <a class="nav-link" href="/pages/create">Create page</a>
             </li>
 
+            @if(Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>

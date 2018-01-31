@@ -1,21 +1,24 @@
 @extends('template')
-
+<style>
+    img{
+        width:348px;
+        height:225px;
+    }
+</style>
 @section('content')
     <div class="col-md-12">
         <h1 align="center">Products</h1>
     </div>
-    @foreach($products as $product)
+    @foreach($categories as $category)
 
         <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{$category['logo']}}" alt="Card image cap">
                 <div class="card-body">
-                    <h2 class="card-text">{{ $product['title'] }}</h2>
-                    <p class="card-text">{{ $product['price'] }}$</p>
+                    <h2 class="card-text">{{ $category['name'] }}</h2>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="/products/{{ $product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                            <a href="/products/{{ $product['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                            <a href="/products/{{ $product['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                            <a href="/categories/{{ $category['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                         </div>
                     </div>
                 </div>
@@ -37,8 +40,6 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a href="/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                            <a href="/orders/{{ $order['id'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                            <a href="/orders/{{ $order['id'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                         </div>
                     </div>
                 </div>
@@ -60,8 +61,6 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a href="/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                            <a href="/pages/{{ $page['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                            <a href="/pages/{{ $page['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                         </div>
                     </div>
                 </div>
