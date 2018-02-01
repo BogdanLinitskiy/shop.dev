@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form action="/orders" method="post" class="form-horizontal">
+        <form action="/admin/orders" method="post" class="form-horizontal">
             @include('embed.errors')
 
             {{csrf_field()}}
@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <button class="btn btn-default">Save</button>
-                <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
+                <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
             </div>
 
         </form>

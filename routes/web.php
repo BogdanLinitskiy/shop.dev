@@ -13,15 +13,17 @@
 
 Route::get('/', 'HomeController@home');
 
+Route::get('/admin/orders/{order}/delete','Admin\OrdersController@delete');
+Route::get('/admin/pages/{page}/delete','Admin\PagesController@delete');
+Route::get('/admin/products/{product}/delete','Admin\ProductsController@delete');
 
-Route::get('/orders/{order}/delete','OrdersController@delete');
-Route::get('/pages/{page}/delete','PagesController@delete');
-Route::get('/products/{product}/delete','ProductsController@delete');
+Route::get('/orders/{order}','OrdersController@show');
+Route::get('/pages/{page}','PagesController@show');
+Route::get('/products/{product}','ProductsController@show');
 
 Route::resources([
-    'orders' => 'OrdersController',
-    'pages' => 'PagesController',
-    'products' => 'ProductsController',
+    'admin/orders' => 'Admin\OrdersController',
+    'admin/pages' => 'Admin\PagesController',
     'admin/products' => 'Admin\ProductsController',
 ]);
 

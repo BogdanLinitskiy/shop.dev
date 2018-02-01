@@ -1,5 +1,6 @@
 @extends('admin_template')
 
+
 @section('content')
     <div class="col-md-12">
         <form action="/auth_check" method="post">
@@ -21,9 +22,12 @@
 
 @section('jumbotron')
     <div class="jumbotron">
-        <a href="/">go back</a>
         <div class="container">
             <h1 class="display-4" align="center">This is admin page</h1>
         </div>
     </div>
+@endsection
+
+@section('redirect')
+    <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
 @endsection

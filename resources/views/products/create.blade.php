@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form action="/products" method="post" class="form-horizontal">
+        <form action="/admin/products" method="post" class="form-horizontal">
             @include('embed.errors')
 
             {{csrf_field()}}
@@ -28,8 +28,13 @@
             </div>
 
             <div class="form-group">
+                <label for="category_id">category_id: </label>
+                <input type ="text" class="form-control" id="category_id" name="category_id">
+            </div>
+
+            <div class="form-group">
                 <button class="btn btn-default">Save</button>
-                <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
+                <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
             </div>
 
         </form>

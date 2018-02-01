@@ -9,12 +9,17 @@
 </head>
 
 <body>
+
+@if(Auth::check() && Auth::user()->isAdmin == 1)
+@include('embed.admin_header')
+@endif
 <main role="main">
     @yield('jumbotron')
     <div class="container">
         <div class="row">
             @yield('content')
         </div>
+        @yield('redirect')
         <hr>
     </div> <!-- /container -->
 </main>

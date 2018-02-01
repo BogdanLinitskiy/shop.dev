@@ -1,15 +1,24 @@
-@extends('template')
+@extends('admin_template')
     <style>
         img{
             width:348px;
             height:225px;
         }
+        .create{
+            margin-bottom: 10px;
+        }
+        .div-create{
+            text-align:center;
+        }
     </style>
 @section('content')
 
     @if(Auth::check() && Auth::user()->isAdmin == 1)
-        <div class="col-md-12">
-            <h1 align="center">Products</h1>
+        <div class="div-create col-md-12">
+            <h1>Products</h1>
+            <a href="/admin/products/create">
+                <button type="button" class="create btn btn-sm btn-outline-secondary">Create new Product</button>
+            </a>
         </div>
     @foreach($categories as $category)
 
@@ -21,6 +30,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a href="/categories/{{ $category['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/categories/{{ $category['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/categories/{{ $category['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                         </div>
                     </div>
                 </div>
@@ -28,9 +39,12 @@
         </div>
 
     @endforeach
-        <div class="col-md-12">
+        <div class="div-create col-md-12">
             <hr>
-            <h1 align="center">Orders</h1>
+            <h1>Orders</h1>
+            <a href="/admin/orders/create">
+                <button type="button" class="create btn btn-sm btn-outline-secondary">Create new Order</button>
+            </a>
         </div>
 
     @foreach($orders as $order)
@@ -39,12 +53,12 @@
                 <div class="card mb-4 box-shadow">
                     <div class="card-body">
                         <h2 class="card-text">{{ $order['customer_name'] }}</h2>
-                        <p class="card-text">{{ $order['email'] }}$</p>
+                        <p class="card-text">{{ $order['email'] }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <a href="/orders/{{ $order['id'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                                <a href="/orders/{{ $order['id'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                                <a href="/admin/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                <a href="/admin/orders/{{ $order['id'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                                <a href="/admin/orders/{{ $order['id'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                             </div>
                         </div>
                     </div>
@@ -53,9 +67,12 @@
 
     @endforeach
 
-        <div class="col-md-12">
+        <div class="div-create col-md-12">
             <hr>
-            <h1 align="center">Pages</h1>
+            <h1>Pages</h1>
+            <a href="/admin/pages/create">
+                <button type="button" class="create btn btn-sm btn-outline-secondary">Create new Page</button>
+            </a>
         </div>
     @foreach($pages as $page)
 
@@ -64,12 +81,12 @@
             <div class="card mb-4 box-shadow">
                 <div class="card-body">
                     <h2 class="card-text">{{ $page['title'] }}</h2>
-                    <p class="card-text">{{ $page['intro'] }}$</p>
+                    <p class="card-text">{{ $page['intro'] }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                            <a href="/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                            <a href="/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                            <a href="/admin/pages/{{ $page['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/admin/pages/{{ $page['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/admin/pages/{{ $page['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                         </div>
                     </div>
                 </div>

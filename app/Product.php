@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable =['title','alias','price','description'];
+    protected $fillable =['title','alias','price','description','category_id'];
 
     public function getRouteKeyName()
     {

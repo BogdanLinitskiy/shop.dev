@@ -7,7 +7,7 @@
             <p> {{ $page['alias'] }} </p>
             <p> {{ $page['intro'] }} </p>
             <p> {{ $page['content'] }} </p>
-            <p><a class="btn btn-primary" href="/" role="button">Back to the home page</a></p>
+            <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
         </div>
 
 @endsection

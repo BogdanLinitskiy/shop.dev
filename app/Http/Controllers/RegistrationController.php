@@ -18,6 +18,7 @@ class RegistrationController extends Controller
             'password' => 'required|min:6|max:50|confirmed',
         ]);
         User::create([
+            'isAdmin' => 0,
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),

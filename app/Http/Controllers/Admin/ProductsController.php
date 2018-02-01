@@ -25,10 +25,11 @@ class ProductsController extends Controller
             'title' => 'required|min:4|unique:products,title',
             'alias' => 'required|min:4|max:40|unique:products,alias',
             'price' => 'required|min:1|max:10',
-            'description' => 'min:10|max:500'
+            'description' => 'min:10|max:500',
+            'category_id' => 'required'
         ]);
-        Product::create(request(['title','alias','price','description']));
-        return redirect('/');
+        Product::create(request(['title','alias','price','description','category_id']));
+        return redirect('/admin_panel/main');
     }
 
     public function edit(Product $product){
@@ -40,10 +41,11 @@ class ProductsController extends Controller
             'title' => 'required|min:4|unique:products,title,' . $product->id,
             'alias' => 'required|min:2|max:20|unique:products,alias,' . $product->id,
             'price' => 'required|min:1|max:50',
-            'description' => 'min:10|max:200'
+            'description' => 'min:10|max:200',
+            'category_id' => 'required'
         ]);
-        $product->update(request(['title','alias','price','description']));
-        return redirect('/');
+        $product->update(request(['title','alias','price','description','category_id']));
+        return redirect('/admin_panel/main');
     }
 
     public function delete(Product $product){
@@ -52,6 +54,6 @@ class ProductsController extends Controller
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect('/');
+        return redirect('/admin_panel/main');
     }
 }
