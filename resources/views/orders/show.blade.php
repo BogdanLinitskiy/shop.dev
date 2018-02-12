@@ -1,4 +1,8 @@
+{{--@if(\Illuminate\Support\Facades\Auth::guard('admin')->user())--}}
+{{--@extends('admin_template')--}}
+{{--@else--}}
 @extends('template')
+    {{--@endif--}}
 
 @section('content')
 
@@ -7,7 +11,7 @@
         <p> {{ $order['email'] }} </p>
         <p> {{ $order['phone'] }} </p>
         <p> {{ $order['feedback'] }} </p>
-        <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
+        <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back to the home page</a></p>
     </div>
 
 @endsection

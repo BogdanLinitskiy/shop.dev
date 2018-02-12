@@ -7,7 +7,7 @@
             <p> {{ $product['alias'] }} </p>
             <p> {{ $product['price'] }} $</p>
             <p> {{ $product['description'] }} </p>
-            <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
+            <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back</a></p>
         </div>
 
 @endsection

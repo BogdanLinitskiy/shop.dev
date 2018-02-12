@@ -30,7 +30,7 @@
             @yield('content')
 
         </div>
-
+        @yield('redirect')
         <hr>
 
     </div> <!-- /container -->

@@ -1,4 +1,4 @@
-@extends('admin_template')
+@extends('template')
 
 @section('content')
     @foreach($category->products as $product)
@@ -11,9 +11,11 @@
                     <p> {{ $product->description }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="/admin/products/{{ $product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/products/{{ $product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            @if(Auth::guard('admin')->user())
                             <a href="/admin/products/{{ $product['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
                             <a href="/admin/products/{{ $product['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -32,5 +34,9 @@
 @endsection
 
 @section('redirect')
-    <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
+    @if(Auth::guard('admin')->user())
+        <p><a class="btn btn-primary" href="/admin" role="button">Back</a></p>
+    @else
+        <p><a class="btn btn-primary" href="/" role="button">Back</a></p>
+    @endif
 @endsection

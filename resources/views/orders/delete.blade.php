@@ -1,4 +1,4 @@
-@extends('template')
+@extends('admin_template')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <button class="btn btn-danger">Delete</button>
-                <p><a class="btn btn-primary" href="/admin_panel/main" role="button">Back to the home page</a></p>
+                <p><a class="btn btn-primary" href="/admin" role="button">Back to the home page</a></p>
             </div>
 
         </form>

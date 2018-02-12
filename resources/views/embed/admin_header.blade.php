@@ -7,26 +7,17 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/admin_panel/main">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/admin">Home <span class="sr-only">(current)</span></a>
+            </li>
+            @if(Auth::guard('admin')->user())
+            <li class="nav-item">
+                <a class="nav-link" href="#">{{Auth::guard('admin')->user()->name}}</a>
+            </li>
+            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
             </li>
 
-            @if(Auth::check())
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{Auth::user()->name}}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-            @endif
         </ul>
     </div>
 </nav>

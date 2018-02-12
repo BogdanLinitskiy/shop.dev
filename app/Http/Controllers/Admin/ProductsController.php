@@ -29,7 +29,7 @@ class ProductsController extends Controller
             'category_id' => 'required'
         ]);
         Product::create(request(['title','alias','price','description','category_id']));
-        return redirect('/admin_panel/main');
+        return redirect('/admin/main');
     }
 
     public function edit(Product $product){
@@ -45,7 +45,7 @@ class ProductsController extends Controller
             'category_id' => 'required'
         ]);
         $product->update(request(['title','alias','price','description','category_id']));
-        return redirect('/admin_panel/main');
+        return redirect('/admin/main');
     }
 
     public function delete(Product $product){
@@ -54,6 +54,6 @@ class ProductsController extends Controller
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect('/admin_panel/main');
+        return redirect('/admin/main');
     }
 }
