@@ -10,6 +10,10 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/order">Your order</a>
+            </li>
+
             @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{Auth::user()->name}}</a>
@@ -27,6 +31,24 @@
                     <a class="nav-link" href="/register">Register</a>
                 </li>
             @endif
+
         </ul>
+
+        <div class="nav-item dropdown col-md-2">
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your cart</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                @if(count($cart_products)<=1)
+                    <p>Cart is empty</p>
+                @else
+                    @foreach($cart_products['products'] as $product)
+                        <p>{{$product['title']}} x {{$cart_products['cart'][$product->id]['amount']}}
+                            : {{$cart_products['cart'][$product->id]['totalPrice']}}$
+                        </p>
+                    @endforeach
+                    <p><a href="/order">Make an order</a></p>
+                    <p><a href="/cart">Check cart details</a></p>
+                @endif
+            </div>
+        </div>
     </div>
 </nav>

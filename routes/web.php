@@ -25,6 +25,16 @@ Route::resources([
 
 Route::get('/categories/{category}','CategoriesController@show');
 
+//orders routes for create and submit
+Route::get('/order','OrdersController@create');
+Route::post('/order','OrdersController@store');
+
+//cart
+Route::get('/cart','CartController@index');
+Route::get('/cart/{product}','CartController@store');
+Route::get('/cart/{product}/remove','CartController@remove');
+Route::get('/cart/{product}/destroy','CartController@destroy');
+
 Route::get('/login','SessionsController@create')->name('login');
 Route::post('/sessions','SessionsController@store');
 Route::get('/logout','SessionsController@destroy');
@@ -36,6 +46,8 @@ Route::get('/admin/orders/{order}/delete','Admin\OrdersController@delete');
 Route::get('/admin/pages/{page}/delete','Admin\PagesController@delete');
 Route::get('/admin/products/{product}/delete','Admin\ProductsController@delete');
 
+
+//Admin Auth Middleware
 Route::get('/admin/','Admin\MainController@index');
 Route::get('/admin/login',['as' => 'admin.login','uses' => 'Admin\LoginController@showLoginForm']);
 Route::post('/admin/login',['uses' => 'Admin\LoginController@login']);

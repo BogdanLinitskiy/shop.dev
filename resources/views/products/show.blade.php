@@ -7,6 +7,7 @@
             <p> {{ $product['alias'] }} </p>
             <p> {{ $product['price'] }} $</p>
             <p> {{ $product['description'] }} </p>
+            <p><a class="btn btn-success" href="/cart/{{$product['alias']}}">Buy</a></p>
             <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back</a></p>
         </div>
 

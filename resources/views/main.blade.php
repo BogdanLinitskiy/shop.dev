@@ -26,27 +26,27 @@
         </div>
 
     @endforeach
-    <div class="col-md-12">
-        <hr>
-        <h1 align="center">Orders</h1>
-    </div>
-    @foreach($orders as $order)
+    {{--<div class="col-md-12">--}}
+        {{--<hr>--}}
+        {{--<h1 align="center">Orders</h1>--}}
+    {{--</div>--}}
+    {{--@foreach($orders as $order)--}}
 
-        <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                    <h2 class="card-text">{{ $order['customer_name'] }}</h2>
-                    <p class="card-text">{{ $order['email'] }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-4">--}}
+            {{--<div class="card mb-4 box-shadow">--}}
+                {{--<div class="card-body">--}}
+                    {{--<h2 class="card-text">{{ $order['customer_name'] }}</h2>--}}
+                    {{--<p class="card-text">{{ $order['email'] }}</p>--}}
+                    {{--<div class="d-flex justify-content-between align-items-center">--}}
+                        {{--<div class="btn-group">--}}
+                            {{--<a href="/orders/{{ $order['id'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-    @endforeach
+    {{--@endforeach--}}
     <div class="col-md-12">
         <hr>
         <h1 align="center">Pages</h1>

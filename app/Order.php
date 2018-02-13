@@ -8,6 +8,10 @@ class Order extends Model
 {
     protected $fillable =['customer_name','email','phone','feedback'];
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 //    public function getRouteKeyName()
 //    {
 //        return 'id';
