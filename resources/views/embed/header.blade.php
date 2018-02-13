@@ -34,8 +34,8 @@
 
         </ul>
 
-        <div class="nav-item dropdown col-md-2">
-            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your cart</a>
+        <div class="nav-item dropdown col-md-2 ">
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:lightgray">Your cart</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
                 @if(count($cart_products)<=1)
                     <p>Cart is empty</p>
