@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-                <label for="feedback" class="for">Phone: </label>
+                <label for="feedback" class="for">Feedback: </label>
                 <input type="text" name="feedback" id="feedback" class="form-control">
             </div>
 

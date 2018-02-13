@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form action="/admin/products" method="post" class="form-horizontal">
+        <form action="/admin/products/{{$category['alias']}}" method="post" class="form-horizontal" enctype="multipart/form-data">
             @include('embed.errors')
 
             {{csrf_field()}}
@@ -18,6 +18,11 @@
             </div>
 
             <div class="form-group">
+                <label for="thumbnail">Thumbnail: </label>
+                <input type ="file" class="form-control" id="thumbnail" name="thumbnail[]" multiple>
+            </div>
+
+            <div class="form-group">
                 <label for="price" >Price: </label>
                 <input type ="text" class="form-control" id="price" name="price">
             </div>
@@ -25,11 +30,6 @@
             <div class="form-group">
                 <label for="description" >Description: </label>
                 <textarea  name="description" id="description" class="form-control"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="category_id">category_id: </label>
-                <input type ="text" class="form-control" id="category_id" name="category_id">
             </div>
 
             <div class="form-group">

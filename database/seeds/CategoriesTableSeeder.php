@@ -15,19 +15,19 @@ class CategoriesTableSeeder extends Seeder
             [
                 'name' => "Laptop's",
                 'alias' => 'laptops',
-                'logo' => 'http://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05512472.png',
+                'logo' => '/uploads/categories/laptops.png',
                 'created_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'Smartphones',
                 'alias' => 'smartphones',
-                'logo' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTopSCTGA1L__9_LmozshKwkdliSrWv3pXHMyl5vA3vU99v-i_C',
+                'logo' => '/uploads/categories/smartphones.jpg',
                 'created_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'Computers',
                 'alias' => 'computers',
-                'logo' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLyg5e_vtytdDLvAbzScRwSBSuHLqgg1ars5tZ2XPddqhaUM6k',
+                'logo' => '/uploads/categories/computers.jpg',
                 'created_at' => date("Y-m-d H:i:s")
             ]
         ]);

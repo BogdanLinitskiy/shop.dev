@@ -21,7 +21,14 @@ Route::resources([
     'admin/orders' => 'Admin\OrdersController',
     'admin/pages' => 'Admin\PagesController',
     'admin/products' => 'Admin\ProductsController',
+    'admin/categories' => 'Admin\CategoriesController'
 ]);
+Route::get('/admin/orders/{order}/delete','Admin\OrdersController@delete');
+Route::get('/admin/pages/{page}/delete','Admin\PagesController@delete');
+Route::get('/admin/products/{product}/delete','Admin\ProductsController@delete');
+
+Route::get('/admin/products/{category}/create','Admin\ProductsController@create');
+Route::post('/admin/products/{category}','Admin\ProductsController@store');
 
 Route::get('/categories/{category}','CategoriesController@show');
 
@@ -41,11 +48,6 @@ Route::get('/logout','SessionsController@destroy');
 
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
-
-Route::get('/admin/orders/{order}/delete','Admin\OrdersController@delete');
-Route::get('/admin/pages/{page}/delete','Admin\PagesController@delete');
-Route::get('/admin/products/{product}/delete','Admin\ProductsController@delete');
-
 
 //Admin Auth Middleware
 Route::get('/admin/','Admin\MainController@index');

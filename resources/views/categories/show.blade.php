@@ -6,16 +6,15 @@
             <div class="card mb-4 box-shadow">
                 <div class="card-body">
                     <h2>{{ $product->title }}</h2>
-                    <p> {{ $product->alias }} </p>
-                    <p> {{ $product->price }} $</p>
+                    <p> {{ $product->price }}$</p>
                     <p> {{ $product->description }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a href="/products/{{ $product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                             <a href="/cart/{{$product['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">Buy</button></a>
                             @if(Auth::guard('admin')->user())
-                            <a href="/admin/products/{{ $product['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                            <a href="/admin/products/{{ $product['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                                <a href="/admin/products/{{ $product['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                                <a href="/admin/products/{{ $product['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                             @endif
                         </div>
                     </div>
@@ -36,6 +35,11 @@
 
 @section('redirect')
     @if(Auth::guard('admin')->user())
+        <p>
+            <a href="/admin/products/{{ $category['alias'] }}/create">
+                <button type="button" class="btn btn-success">Add new product</button>
+            </a>
+        </p>
         <p><a class="btn btn-primary" href="/admin" role="button">Back</a></p>
     @else
         <p><a class="btn btn-primary" href="/" role="button">Back</a></p>

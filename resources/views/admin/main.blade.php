@@ -17,8 +17,8 @@
 
     <div class="div-create col-md-12">
         <h1>Products</h1>
-        <a href="/admin/products/create">
-            <button type="button" class="create btn btn-sm btn-outline-secondary">Create new Product</button>
+        <a href="/admin/categories/create">
+            <button type="button" class="create btn btn-sm btn-outline-secondary">Create new product category</button>
         </a>
     </div>
     @foreach($categories as $category)
@@ -31,6 +31,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a href="/categories/{{ $category['alias'] }}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            <a href="/admin/categories/{{ $category['alias'] }}/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                            <a href="/admin/categories/{{ $category['alias'] }}/delete"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
                         </div>
                     </div>
                 </div>
