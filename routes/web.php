@@ -28,6 +28,7 @@ Route::resources([
 Route::get('/admin/orders/{order}/delete','Admin\OrdersController@delete');
 Route::get('/admin/pages/{page}/delete','Admin\PagesController@delete');
 Route::get('/admin/products/{product}/delete','Admin\ProductsController@delete');
+Route::get('/admin/categories/{category}/delete','Admin\CategoriesController@delete');
 
 Route::get('/admin/products/{category}/create','Admin\ProductsController@create');
 Route::post('/admin/products/{category}','Admin\ProductsController@store');

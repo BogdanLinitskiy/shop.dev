@@ -73,7 +73,7 @@ class ProductsController extends Controller
             'category_id' => 'required'
         ]);
         $product->update(request(['title','alias','price','description','category_id']));
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
     public function delete(Product $product){
@@ -82,6 +82,6 @@ class ProductsController extends Controller
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 }

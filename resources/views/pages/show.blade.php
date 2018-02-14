@@ -6,7 +6,11 @@
             <h2>{{ $page['title'] }}</h2>
             <h5> {{ $page['intro'] }} </h5>
             <p> {{ $page['content'] }} </p>
-            <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back to the home page</a></p>
+            @if(Auth::guard('admin')->user())
+                <p><a class="btn btn-primary" href="/admin/pages" role="button">Back </a></p>
+            @else
+                <p><a class="btn btn-primary" href="/pages" role="button">Back </a></p>
+            @endif
         </div>
 
 @endsection

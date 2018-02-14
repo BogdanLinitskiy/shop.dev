@@ -35,4 +35,29 @@ class CategoriesController extends Controller
         return redirect('/admin');
     }
 
+    public function edit(Category $category)
+    {
+        return view('categories.edit',compact('category'));
+    }
+
+    public function update(Category $category)
+    {
+        $this->validate(request(),[
+            'name' => 'required|min:3|unique:categories,name,' . $category->id,
+            'alias' => 'required|min:3|unique:categories,alias,' . $category->id,
+            'logo' => 'required',
+        ]);
+        $category->update(request(['name','alias','logo']));
+        return redirect('/admin');
+    }
+
+    public function delete(Category $category){
+        return view('categories.delete',compact('category'));
+    }
+
+    public function destroy(Category $category){
+        $category->delete();
+        return redirect('/admin');
+    }
+
 }

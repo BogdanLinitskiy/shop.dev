@@ -16,7 +16,13 @@
             </div>
         </div>
     @endforeach
-    <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back to the home page</a></p>
+    <div class="col-md-12">
+        @if(Auth::guard('admin')->user())
+            <p><a class="btn btn-primary" href="/admin" role="button">To main page</a></p>
+        @else
+            <p><a class="btn btn-primary" href="/" role="button">To home page</a></p>
+        @endif
+    </div>
 @endsection
 
 @section('jumbotron')
