@@ -13,7 +13,9 @@
 
 Route::get('/', 'HomeController@home');
 
+
 Route::get('/orders/{order}','OrdersController@show');
+Route::get('/pages','PagesController@index');
 Route::get('/pages/{page}','PagesController@show');
 Route::get('/products/{product}','ProductsController@show');
 

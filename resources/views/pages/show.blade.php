@@ -4,8 +4,7 @@
 
         <div class="col-md-12">
             <h2>{{ $page['title'] }}</h2>
-            <p> {{ $page['alias'] }} </p>
-            <p> {{ $page['intro'] }} </p>
+            <h5> {{ $page['intro'] }} </h5>
             <p> {{ $page['content'] }} </p>
             <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back to the home page</a></p>
         </div>

@@ -11,30 +11,16 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="/pages">Articles</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/order">Your order</a>
             </li>
 
-            @if(Auth::check())
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{Auth::user()->name}}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-            @endif
-
         </ul>
 
-        <div class="nav-item dropdown col-md-2 ">
+        <div class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:lightgray">Your cart</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
                 @if(!isset($_COOKIE['cart']))
@@ -49,6 +35,27 @@
                     <p><a href="/cart">Check cart details</a></p>
                 @endif
             </div>
+        </div>
+        <div class="nav-item  col-md-2 ">
+            <ul class="navbar-nav mr-auto">
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                @endif
+            </ul>
         </div>
     </div>
 </nav>
