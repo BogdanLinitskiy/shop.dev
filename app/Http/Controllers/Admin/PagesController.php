@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('Admin')->except('show','index');
+        $this->middleware('Admin')->except('show');
     }
 
     public function index()

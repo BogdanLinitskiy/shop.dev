@@ -16,7 +16,11 @@ class ProductsController extends Controller
         $this->middleware('Admin')->except('show');
     }
 
-
+    public function index()
+    {
+        $products = Product::all();
+        return view('admin.index_pages.products',compact('products'));
+    }
 
     public function show(Product $product)
     {

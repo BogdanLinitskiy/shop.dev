@@ -26,12 +26,14 @@
         </ul>
         <div class="nav-item  col-md-2 ">
             <ul class="navbar-nav mr-auto">
+                @if(Auth::guard('admin')->user())
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{Auth::guard('admin')->user()->name}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/logout">Logout</a>
                 </li>
+                    @endif
             </ul>
         </div>
     </div>
