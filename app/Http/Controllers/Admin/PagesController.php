@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Admin')->except('show','index');
+    }
+
+    public function index()
+    {
+        $pages = Page::all();
+        return view('admin.index_pages.pages',compact('pages'));
+    }
+
     public function show(Page $page){
         return view('pages.show',compact('page'));
     }

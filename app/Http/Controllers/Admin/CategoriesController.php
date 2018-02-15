@@ -11,7 +11,13 @@ class CategoriesController extends Controller
     public $file;
     public function __construct()
     {
-        $this->middleware('Admin')->except('show');
+        $this->middleware('Admin')->except('show','index');
+    }
+
+    public function index()
+    {
+        $categories = Category::all();
+        return view('admin.index_pages.categories',compact('categories'));
     }
 
     public function show(Category $category)

@@ -33,6 +33,9 @@ Route::get('/admin/categories/{category}/delete','Admin\CategoriesController@del
 Route::get('/admin/products/{category}/create','Admin\ProductsController@create');
 Route::post('/admin/products/{category}','Admin\ProductsController@store');
 
+Route::get('/admin/categories/{category}/{product}/edit','Admin\ProductsController@edit');
+Route::post('/admin/categories/{category}/{product}','Admin\ProductsController@update');
+
 Route::get('/categories/{category}','CategoriesController@show');
 
 //orders routes for create and submit

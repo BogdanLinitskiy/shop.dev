@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="col-md-12">
-        <form action="/admin/products/{{$product->alias}}" method="post" class="form-horizontal">
+        <form action="/admin/products/{{$product->alias}}" method="post" class="form-horizontal" enctype="multipart/form-data">
             @include('embed.errors')
 
             {{csrf_field()}}
@@ -17,6 +17,11 @@
             <div class="form-group">
                 <label for="alias" >Alias: </label>
                 <input type ="text" class="form-control" id="alias" name="alias" value="{{$product['alias']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="thumbnail">Thumbnail: </label>
+                <input type ="file" class="form-control" id="thumbnail" name="thumbnail[]" multiple>
             </div>
 
             <div class="form-group">

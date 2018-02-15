@@ -1,4 +1,4 @@
-@extends('template')
+@extends(Auth::guard('admin')->user() ? 'admin_template' : 'template')
 
 @section('content')
 

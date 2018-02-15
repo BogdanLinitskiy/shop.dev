@@ -9,15 +9,30 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/admin">Home <span class="sr-only">(current)</span></a>
             </li>
-            @if(Auth::guard('admin')->user())
             <li class="nav-item">
-                <a class="nav-link" href="#">{{Auth::guard('admin')->user()->name}}</a>
+                <a class="nav-link" href="/admin/categories">Categories</a>
             </li>
-            @endif
             <li class="nav-item">
-                <a class="nav-link" href="/admin/logout">Logout</a>
+                <a class="nav-link" href="/admin/products">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders">Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/pages">Articles</a>
             </li>
 
+
         </ul>
+        <div class="nav-item  col-md-2 ">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{Auth::guard('admin')->user()->name}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

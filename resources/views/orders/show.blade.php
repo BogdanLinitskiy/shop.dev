@@ -1,8 +1,4 @@
-{{--@if(\Illuminate\Support\Facades\Auth::guard('admin')->user())--}}
-{{--@extends('admin_template')--}}
-{{--@else--}}
-@extends('template')
-    {{--@endif--}}
+@extends(Auth::guard('admin')->user() ? 'admin_template' : 'template')
 
 @section('content')
 

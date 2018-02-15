@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 
 class OrdersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Admin')->except('show,index');
+    }
+
+    public function index()
+    {
+        $orders = Order::all();
+        return view('admin.index_pages.orders',compact('orders'));
+    }
+
     public function show(Order $order){
         return view('orders.show',compact('order'));
     }
