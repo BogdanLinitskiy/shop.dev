@@ -28,15 +28,17 @@
                 </tr>
             @endforeach
         </table>
-        <a href="/orders"><button type="submit" class="btn btn-primary">Go to order page</button></a>
+        <div class="text-center">
+            <a href="/order"><button type="submit" class="btn btn-primary">Go to order page</button></a>
+        </div>
     </div>
 
 @endsection
 
 @section('jumbotron')
     <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-4">Orders</h1>
+        <div class="container text-center">
+            <h1 class="display-4">Your cart</h1>
         </div>
     </div>
 @endsection

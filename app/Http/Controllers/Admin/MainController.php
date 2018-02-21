@@ -19,14 +19,14 @@ class MainController extends Controller
 
     public function index()
     {
-        $data['pages'] = Page::all();
-        $data['orders'] = Order::all();
+//        $data['pages'] = Page::all();
+//        $data['orders'] = Order::all();
         $data['last_added']['categories'] = Category::latest()->limit(3)->get();
         $data['last_added']['products'] = Product::latest()->limit(3)->get();
         $data['last_added']['orders'] = Order::latest()->limit(3)->get();
         $data['last_added']['pages'] = Page::latest()->limit(3)->get();
-        $data['products'] = Product::all();
-        $data['categories'] = Category::all();
+//        $data['products'] = Product::all();
+//        $data['categories'] = Category::all();
         return view('admin.main',$data);
     }
 

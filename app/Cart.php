@@ -34,7 +34,13 @@ class Cart extends Model
     {
         $cart = self::getCartArray();
         if(isset($cart[$product->id])){
-            unset($cart[$product->id]);
+            if($cart[$product->id]['amount'] == 1){
+                unset($cart[$product->id]);
+            }else{
+                $cart[$product->id]['amount']--;
+                $cart[$product->id]['totalPrice'] =
+                    round($product->price * $cart[$product->id]['amount'],2);
+            }
         }
         return $cart;
     }

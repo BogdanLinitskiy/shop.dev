@@ -1,4 +1,4 @@
-@extends('template')
+@extends(Auth::guard('admin')->user() ? 'admin_template' : 'template')
 
 @section('content')
 
@@ -10,7 +10,6 @@
             <p> {{ $product['price'] }} $</p>
             <p> {{ $product['description'] }} </p>
             <p><a class="btn btn-success" href="/cart/{{$product['alias']}}">Buy</a></p>
-            <p><a class="btn btn-primary" href="{{url()->previous()}}" role="button">Back</a></p>
         </div>
 
 @endsection
@@ -23,4 +22,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('redirect')
+    @if(Auth::guard('admin')->user())
+        <p><a class="btn btn-primary" href="/admin" role="button">Home page</a></p>
+    @else
+        <p><a class="btn btn-primary" href="/" role="button">Home page</a></p>
+    @endif
 @endsection

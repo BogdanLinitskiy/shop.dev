@@ -23,9 +23,11 @@
         <div class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:lightgray">Your cart</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-                @if(!isset($_COOKIE['cart']))
+                @if(!isset($_COOKIE['cart']) )
                     <p>Cart is empty</p>
-                @else
+                @elseif(is_object($cart_products))
+                    <p>Cart is empty</p>
+                @elseif( !is_object($cart_products) && is_array($cart_products['products']))
                     @foreach($cart_products['products'] as $product)
                         <p>{{$product['title']}} x {{$cart_products['cart'][$product->id]['amount']}}
                             : {{$cart_products['cart'][$product->id]['totalPrice']}}$

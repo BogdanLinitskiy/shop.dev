@@ -35,7 +35,7 @@ class PagesController extends Controller
             'content' => 'min:10|max:200'
         ]);
         Page::create(request(['title','alias','intro','content']));
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
     public function edit(Page $page){
@@ -50,7 +50,7 @@ class PagesController extends Controller
             'content' => 'min:10|max:200'
         ]);
         $page->update(request(['title','alias','intro','content']));
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
     public function delete(Page $page){
@@ -59,6 +59,6 @@ class PagesController extends Controller
 
     public function destroy(Page $page){
         $page->delete();
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 }

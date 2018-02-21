@@ -35,7 +35,7 @@ class OrdersController extends Controller
             'feedback' => 'min:5|max:200'
         ]);
         Order::create(request(['customer_name','email','phone','feedback']));
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
     public function edit(Order $order){
@@ -50,7 +50,7 @@ class OrdersController extends Controller
             'feedback' => 'min:5|max:200'
         ]);
         $order->update(request(['customer_name','email','phone','feedback']));
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
     public function delete(Order $order){
@@ -59,7 +59,7 @@ class OrdersController extends Controller
 
     public function destroy(Order $order){
         $order->delete();
-        return redirect('/admin/main');
+        return redirect('/admin');
     }
 
 }
